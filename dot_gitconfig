@@ -1,9 +1,51 @@
+[core]
+    pager = delta
+    editor = nano
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+    gpgsign = true
+
 [user]
-	name = Andres Vargas
-	email = avargasp87@gmail.com
+    name = Andres Vargas
+    email = avargasp87@gmail.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFSB94sfW1YFM093USLJFOS9PLJhZN2KSMfyGbPg3kQd
+
 [pull]
-	rebase = false
+    rebase = false
+
 [push]
-	default = simple
+    default = simple
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[includeIf "gitdir:~/Develop/esmax/"]
+    path = ~/Develop/esmax/.gitconfig
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    navigate = true
+    dark = true
+    features = decorations
+    side-by-side = false
+    line-numbers = true
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
