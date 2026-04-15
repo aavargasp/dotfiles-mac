@@ -4,7 +4,7 @@
 Include ~/.orbstack/ssh/config
 
 Host *
-	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 ### GitHub Config ###
 # Personal account
@@ -13,13 +13,14 @@ Host github.com
     User git
     Port 443
     PreferredAuthentications publickey
-	
+
 # Work account
 Host ssh.dev.azure.com
     User git
+
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/ssh-work-esmax.pub
-    IdentitiesOnly yes
+    #IdentityFile ~/.ssh/ssh-work-esmax.pub
+    #IdentitiesOnly yes
     WarnWeakCrypto no
 
 ### GitLab Config ###
@@ -29,4 +30,19 @@ Host gitlab.com
     User git
     Port 443
     PreferredAuthentications publickey
+
+### Homelab
+Host eva01-servarr
+    HostName 192.168.8.11
+    User root
+
+### Work
+Host esmax-bastion-dev
+    Hostname 4.157.249.73
+    User azureuser
+    Port 22
+    PreferredAuthentications publickey
+    #IdentityFile ~/Develop/esmax/keys/vmsmxsisbastiondeveastus
+    #IdentitiesOnly yes
+
 

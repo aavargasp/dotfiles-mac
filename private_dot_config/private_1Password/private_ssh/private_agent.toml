@@ -32,4 +32,7 @@
 vault = "Personal"
 
 [[ssh-keys]]
+vault = "Nerv"
+
+[[ssh-keys]]
 vault = "Amaris"
